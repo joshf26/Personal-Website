@@ -103,13 +103,29 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+@keyframes ballblink
+{
+  0%  {color: blue;}
+  40%  {color: blue;}
+  45%  {color: black;}
+  50% {color: #bf360c;}
+  90%  {color: #bf360c;}
+  95%  {color: black;}
+  100%  {color: blue;}
+}
+
 #title {
   font-size: 128px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  text-shadow: hoff voff blur #000;
+  text-shadow: 2px 2px 2px #000;
+}
+
+#ball {
+  display: inline;
+  animation: ballblink infinite linear 1.5s;
 }
 
 /* ==========================================================================
