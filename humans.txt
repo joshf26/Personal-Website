@@ -3,11 +3,11 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    Joshua Franklin -- Web Developer -- github.com/joshf26
 
 # THANKS
 
-    <name>
+    html5boilerplate.com
 
 # TECHNOLOGY COLOPHON
 
