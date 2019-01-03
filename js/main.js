@@ -6,6 +6,7 @@ let about_pos;
 let project_pos;
 
 let current_section = 0;
+let enable_scroll_detection = true;
 
 function init() {
   let document_rect = document.body.getBoundingClientRect();
@@ -27,6 +28,18 @@ function init() {
     top: project_rect.top - document_rect.top,
     left: project_rect.left - document_rect.left
   };
+
+  update_scroll(false, true);
+}
+
+function show_ball(from_title) {
+  ball.css('display', 'block');
+  if (from_title) {
+    ball_inline.css('visibility', 'hidden');
+    ball.css('backgroundColor', ball_inline.css('color'));
+    ball.css('top', (ball_pos.top + 128) + 'px');
+    ball.css('left', (ball_pos.left + 17) + 'px');
+  }
 }
 
 function go_to_title(current_section) {
@@ -41,15 +54,9 @@ function go_to_title(current_section) {
   });
 }
 
-function go_to_about(current_section) {
-  if (current_section === 0) {
-    // Replace the period in the sentence with a ball for animation.
-    ball.css('top', (ball_pos.top + 128) + 'px');
-    ball.css('left', (ball_pos.left + 17) + 'px');
-    ball.css('display', 'block');
-    ball_inline.css('visibility', 'hidden');
-    ball.css('backgroundColor', ball_inline.css('color'));
-  }
+function go_to_about(current_section, first, force) {
+  // Replace the period in the sentence with a ball for animation.
+  show_ball(current_section === 0 || first);
 
   // Start the ball as orange and make it shrink.
   ball.animate({
@@ -58,20 +65,16 @@ function go_to_about(current_section) {
     height: '10px',
     width: '10px',
     top: (about_pos.top + 20) + 'px'
-  }, 1000);
+  }, force ? 0 : 1000);
 
   setTimeout(function () {
     ball.css('zIndex', '');
   }, 500);
-
-  // Scroll the page down to the about section.
-  // $.smoothScroll({
-  //   scrollTarget: $('#about-target'),
-  //   speed: 800
-  // });
 }
 
-function go_to_projects(current_section) {
+function go_to_projects(current_section, first) {
+  show_ball(first);
+
   ball.animate({
     backgroundColor: 'blue',
     left: '50%',
@@ -83,22 +86,41 @@ function go_to_projects(current_section) {
   setTimeout(function () {
     ball.css('zIndex', '-1');
   }, 500);
-
-  // $.smoothScroll({
-  //   scrollTarget: $('#projects-target'),
-  //   speed: 800
-  // });
 }
 
 const section_animations = [go_to_title, go_to_about, go_to_projects, function () {}];
+const section_targets = [$('#title-target'), $('#about-target'), $('#projects-target'), function () {}];
 
-document.addEventListener('scroll', function () {
+function update_scroll(first, force) {
+  if (!enable_scroll_detection) return;
+  if (typeof first !== "boolean") first = false;
+
   let documentTop = $(window).scrollTop();
   let new_section = Math.round(documentTop / window.innerHeight);
-  if (new_section !== current_section) {
-    section_animations[new_section](current_section);
+  if (new_section !== current_section || force) {
+    section_animations[new_section](current_section, first, force);
     current_section = new_section;
   }
-});
+}
+
+function click_handler() {
+  enable_scroll_detection = false;
+  $.smoothScroll({
+    scrollTarget: section_targets[current_section + 1],
+    speed: 800
+  });
+  setTimeout(function () {
+      enable_scroll_detection = true;
+    }, 800);
+  if (current_section < 2) {
+    section_animations[current_section + 1](current_section++);
+  }
+}
+
+window.addEventListener('resize', init);
+document.addEventListener('scroll', update_scroll);
+ball_inline.click(click_handler);
+ball.click(click_handler);
 
 init();
+update_scroll(true);
