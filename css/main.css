@@ -13,13 +13,11 @@
 html {
   color: #222;
   font-size: 24px;
-  padding: 0 25%;
   line-height: 1.4;
   text-align: center;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 
   background: #e2e2e2;
-  height: 100%;
   box-shadow: inset 0 0 500px black;
 
   text-shadow: 2px 2px 2px black;
@@ -117,38 +115,74 @@ textarea {
   100% {color: blue;}
 }
 
-.circle {
+.circleimage {
   border-radius: 100%;
-  display: block;
-  border: 10px solid white;
+
+}
+
+.circleimage div {
+  border-radius: 100%;
+  background-color: white;
+  height: 200px;
   width: 200px;
+}
+
+.circleimage img {
   position: absolute;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  height: 180px;
+  width: 180px;
+  left: 10px;
+  top: 10px;
+  z-index: 2;
 }
 
 .shadow {
   box-shadow: 2px 2px 2px black;
 }
 
-.center {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.quarter-section {
+  height: 25vh;
+  display: flex;
+}
+
+.section {
+  height: 100vh;
+  display: flex;
+}
+
+.card {
+  background-color: blue;
+  padding: 50px;
+  color: white;
+}
+
+.project {
+  box-sizing: border-box;
+  flex-basis: 30%;
+  margin-bottom: 30px;
+  display: flex;
+}
+
+.project > h4 {
+  margin: auto;
+}
+
+.project:nth-child(even) {
+  background-color: #bf360c;
 }
 
 #title {
   font-size: 128px;
-  top: 50%;
+  margin: auto;
 }
 
 #ball {
   height: 17px;
   width: 17px;
   border-radius: 50%;
-  position: fixed;
+  position: relative;
   display: none;
-  z-index: 999;
+  z-index: 1;
   transform: translate(-50%, -50%);
 }
 
@@ -159,11 +193,46 @@ textarea {
 }
 
 #about {
-  position: absolute;
-  top: 150%;
-  background-color: blue;
-  padding: 50px;
-  color: white;
+  width: 600px;
+  margin: auto;
+}
+
+#profile {
+  width: 200px;
+  border: 10px solid white;
+  border-radius: 50%;
+  position: relative;
+  top: -100px;
+  left: 50%;
+  margin-bottom: -70px;
+  transform: translateX(-50%);
+  display: block;
+}
+
+#projects {
+  margin: auto;
+}
+
+#projects-container {
+  justify-content: space-between;
+  width: 900px;
+  flex-wrap: wrap;
+}
+
+#footer {
+  margin: auto;
+}
+
+@media (min-width: 900px) {
+  #projects-container {
+    display: flex;
+  }
+}
+
+#webdesign {
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/website-23ad0.appspot.com/o/background2.jpg?alt=media&token=3bf9a443-eb15-4ac9-b71e-bc63668a2b5d");
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 /* ==========================================================================
