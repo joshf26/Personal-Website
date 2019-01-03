@@ -34,6 +34,8 @@ hr {
   border-top: 1px solid #ccc;
   margin: 1em 0;
   padding: 0;
+
+  align-content: center;
 }
 
 /*
@@ -179,10 +181,10 @@ a {
 }
 
 #ball {
-  height: 17px;
-  width: 17px;
+  height: 15px;
+  width: 15px;
   border-radius: 50%;
-  position: relative;
+  position: absolute;
   display: none;
   z-index: 1;
   transform: translate(-50%, -50%);
@@ -213,6 +215,10 @@ a {
 
 #projects {
   margin: auto;
+}
+
+#projects > h1 {
+  color: white;
 }
 
 #projectscontainer {
