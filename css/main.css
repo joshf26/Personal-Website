@@ -138,41 +138,46 @@ a {
 
 .card {
   background-color: blue;
-  padding: 50px;
+  padding: 25px;
   color: white;
 }
 
 .project {
-  flex: 1;
   display: flex;
   flex-direction: column;
   transition: 0.3s;
-  min-height: 150px;
+  min-height: 200px;
+  flex: 1 35%;
+  width: 100%;
 }
 
 .project > div {
   margin: auto;
 }
 
-.project .projectdescription {
+.project .projectdescription, .project .awarddescription {
   display: none;
   font-size: 16px;
 }
 
 .project:hover {
-  flex: 2;
+  flex: 2 2 35%;
 }
 
-.project:hover .projectdescription {
+.project:hover .projectdescription, .project:hover .awarddescription {
   display: block;
-}
-
-.project:nth-child(even) {
-  background-color: #bf360c;
 }
 
 .projecttitle {
   font-size: 24px;
+}
+
+.award {
+  width: 30px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 20px;
 }
 
 #title {
@@ -222,7 +227,6 @@ a {
 }
 
 #projectscontainer {
-  justify-content: space-between;
   width: 900px;
   flex-wrap: wrap;
 }

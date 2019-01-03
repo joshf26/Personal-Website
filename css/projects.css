@@ -32,3 +32,18 @@
 #project-adpaws {
   animation: colorcycle 40s infinite ease;
 }
+
+/* Graphics Club */
+#project-graphicsclub {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://upload.wikimedia.org/wikipedia/commons/f/f4/24-cell.gif");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: black;
+}
+
+/* What Happens After */
+#project-whathappensafter {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://distrokid.imgix.net/http%3A//distrokid.com/hyperfollow/art/joshuafranklin/375771?w=800&s=cb743a3b6b276846a93abf1e777fcd5b");
+  background-position: center;
+  background-repeat: no-repeat;
+}
