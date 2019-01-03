@@ -1,0 +1,34 @@
+/* Web Design */
+#project-webdesign {
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/website-23ad0.appspot.com/o/background2.jpg?alt=media&token=3bf9a443-eb15-4ac9-b71e-bc63668a2b5d");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* Ad Paws */
+@keyframes colorcycle {
+    0% {
+        background: red;
+        color: white;
+    }
+    25% {
+        background: yellow;
+        color: black;
+    }
+    50% {
+        background: blue;
+        color: white;
+    }
+    75% {
+        background: green;
+        color: white;
+    }
+    100% {
+        background: red;
+        color: white;
+    }
+}
+
+#project-adpaws {
+  animation: colorcycle 40s infinite ease;
+}
