@@ -47,3 +47,8 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+
+/* Interactive Resume */
+#project-interactiveresume {
+  background-image: url("/img/project-interactiveresume.gif");
+}
