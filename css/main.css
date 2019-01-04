@@ -18,7 +18,6 @@ html {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 
   background: #e2e2e2;
-  box-shadow: inset 0 0 500px black;
 
   text-shadow: 2px 2px 2px black;
 }
@@ -136,6 +135,10 @@ a {
   display: flex;
 }
 
+.flex {
+  display: flex;
+}
+
 .card {
   background-color: blue;
   padding: 25px;
@@ -148,7 +151,7 @@ a {
   transition: 0.3s;
   min-height: 200px;
   flex: 1 35%;
-  width: 100%;
+  /*width: 100%;*/
 }
 
 .project > div {
@@ -181,7 +184,7 @@ a {
 }
 
 #title {
-  font-size: 128px;
+  font-size: 48px;
   margin: auto;
 }
 
@@ -227,7 +230,7 @@ a {
 }
 
 #projectscontainer {
-  width: 900px;
+  max-width: 900px;
   flex-wrap: wrap;
 }
 
@@ -236,8 +239,22 @@ a {
 }
 
 @media (min-width: 900px) {
+  html {
+    box-shadow: inset 0 0 500px black;
+  }
+  
+  #title {
+    font-size: 128px;
+  }
+
   #projectscontainer {
     display: flex;
+  }
+}
+
+@media (max-width: 900px) {
+  .project .projectdescription, .project .awarddescription {
+    display: block;
   }
 }
 
