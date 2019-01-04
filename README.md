@@ -1,1 +1,1 @@
-My personal website, soon to be hosted at http://joshfrankl.in.
+My personal website, soon to be hosted at https://joshfrankl.in.
