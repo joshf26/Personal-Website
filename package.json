@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/joshf26/Personal-Website#readme",
   "devDependencies": {
-    "gulp": "^4.0.0"
+    "gulp": "^4.0.0",
+    "gulp-nunjucks": "^4.0.0"
   }
 }

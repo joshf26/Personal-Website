@@ -121,6 +121,24 @@ window.addEventListener('resize', init);
 document.addEventListener('scroll', update_scroll);
 ball_inline.click(click_handler);
 ball.click(click_handler);
+$('#close').click(function () {
+  $('#contactpopup').animate({
+    left: '-50%',
+    right: '150%'
+  }, 500);
+  $('#pagemask').animate({
+    opacity: '0'
+  }, 500);
+});
+$('#contact').click(function () {
+  $('#contactpopup').animate({
+    left: '10%',
+    right: '10%'
+  }, 500);
+  $('#pagemask').animate({
+    opacity: '1'
+  }, 500);
+});
 
 init();
 update_scroll(true);

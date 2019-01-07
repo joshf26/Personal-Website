@@ -1,9 +1,16 @@
-const { task, watch, series, src, dest } = require('gulp');
+const { task, watch, series, parallel, src, dest } = require('gulp');
+const { compile } = require('gulp-nunjucks');
 
-task('build', function () {
-    return src('src/**').pipe(dest('dist'));
+task('copy', () => {
+  return src(['src/**', '!src/templates/**']).pipe(dest('dist'));
 });
 
+task('build', () => {
+  return src('src/templates/index.html').pipe(compile()).pipe(dest('dist'));
+});
+
+task('default', parallel('copy', 'build'));
+
 task('watch', function() {
-  watch('src/**', series('build'));
+  watch('src/**', parallel('copy', 'build'));
 });
