@@ -1,6 +1,6 @@
-{% extends "base.html" %}
+{% extends "helper/base.html" %}
 
-{% block body %}
+{% block body -%}
 <div class="section">
   <div class="margin-auto">
     <h1>404</h1>
@@ -8,4 +8,8 @@
     <a href="/">Back Home</a>
   </div>
 </div>
-{% endblock %}
+{%- endblock %}
+
+{% block css -%}
+  <link rel="stylesheet" href="/css/home.css">
+{%- endblock %}

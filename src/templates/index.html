@@ -1,6 +1,6 @@
-{% extends "base.html" %}
+{% extends "helper/base.html" %}
 
-{% block body %}
+{% block body -%}
 <div id="ball" class="shadow"></div>
 
 <div id="title-target"></div>
@@ -81,10 +81,17 @@
     <input type="submit">
   </form>
 </div>
-{% endblock %}
+{%- endblock %}
 
-{% block javascript %}
+{% block css -%}
+  <link rel="stylesheet" href="/css/home.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/form.css">
+  <link rel="stylesheet" href="/css/projects.css">
+{%- endblock %}
+
+{% block javascript -%}
   {{ jquery(true, true) }}
   <script src="js/ball.js"></script>
   <script src="js/contact.js"></script>
-{% endblock %}
+{%- endblock %}

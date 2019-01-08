@@ -1,8 +1,7 @@
-{% from 'jquery.html' import jquery %}
+{% from 'helper/jquery.html' import jquery %}
 
 <!doctype html>
-<html class="no-js" lang="">
-
+<html class="no-js" lang="en">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -14,23 +13,22 @@
             This should be uncommented before deployment.-->
   <!--<link rel="manifest" href="site.webmanifest">-->
 
-  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="apple-touch-icon" href="/icon.png">
   <link rel="stylesheet" href="/css/normalize.css">
-  {% block css %}
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="/css/projects.css">
-  {% endblock %}
+  <link rel="stylesheet" href="/css/common.css">
+
+  {% block css -%}{%- endblock %}
 </head>
 <body>
 <!--[if lte IE 9]>
   <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
 <![endif]-->
 
-{% block body %}{% endblock %}
+{% block body -%}{%- endblock %}
 
-<script src="js/plugins.js"></script>
+<script src="/js/plugins.js"></script>
 
-{% block javascript %}{% endblock %}
+{% block javascript -%}{%- endblock %}
 
 <script>
   window.ga = function () {ga.q.push(arguments)};

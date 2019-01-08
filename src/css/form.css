@@ -1,0 +1,16 @@
+input, textarea {
+  border: 5px solid #bf360c;
+  padding: 5px;
+  background-color: white;
+  margin-bottom: 2px;
+  max-width: 90%;
+}
+
+input[type="submit"] {
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: blue;
+  color: white;
+}
