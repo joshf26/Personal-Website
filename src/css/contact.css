@@ -1,0 +1,55 @@
+input, textarea {
+  border: 5px solid #bf360c;
+  padding: 5px;
+  background-color: white;
+  margin-bottom: 2px;
+  max-width: 90%;
+}
+
+input[type="submit"] {
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: blue;
+  color: white;
+}
+
+#contact {
+  cursor: pointer;
+}
+
+#page-mask {
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#contact-popup {
+  position: fixed;
+  padding: 20px;
+  top: 5%;
+  right: 150%;
+  bottom: 5%;
+  left: -50%;
+  max-width: 400px;
+  overflow: hidden;
+}
+
+#contact-popup textarea {
+  width: calc(100% - 20px);
+  height: 200px;
+}
+
+#close {
+  position: absolute;
+  top: 0;
+  right: 5px;
+  color: white;
+  cursor: pointer;
+}

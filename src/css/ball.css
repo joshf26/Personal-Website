@@ -1,0 +1,28 @@
+@keyframes ballblink
+{
+  0%   {background-color: blue;}
+  40%  {background-color: blue;}
+  45%  {background-color: black;}
+  50%  {background-color: #bf360c;}
+  90%  {background-color: #bf360c;}
+  95%  {background-color: black;}
+  100% {background-color: blue;}
+}
+
+#ball {
+  height: 300px;
+  width: 300px;
+  left: 50%;
+  top: -150px;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+}
+
+#helper {
+  position: absolute;
+  top: calc(50% + 45px);
+  left: calc(50% + 257px);
+  opacity: 0;
+}
