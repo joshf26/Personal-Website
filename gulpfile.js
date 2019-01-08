@@ -1,4 +1,4 @@
-const { task, watch, series, parallel, src, dest } = require('gulp');
+const { task, watch, parallel, src, dest } = require('gulp');
 const { compile } = require('gulp-nunjucks');
 const { exclude } = require('gulp-ignore');
 const minify = require('gulp-minify');
