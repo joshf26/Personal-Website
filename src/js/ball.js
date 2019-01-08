@@ -85,8 +85,14 @@ function animate() {
   }, ANIMATION_TIME);
 
   // Execute before animation.
-  if (position.color !== 0) {
+  if (position.color !== 0)
     ball.css('animation', 'none');
+
+  if (helper_shown) {
+    helper.animate({
+      opacity: 0
+    }, 300);
+    helper_shown = false;
   }
 
   // Execute half-way through animation.
@@ -124,13 +130,6 @@ ball.click(() => {
     scrollTarget: ball_positions[current_position_index + 1].scroll_target,
     speed: 800
   });
-
-  if (helper_shown) {
-    helper.animate({
-      opacity: 0
-    }, 300);
-    helper_shown = false;
-  }
 });
 
 window.addEventListener('scroll', () => {

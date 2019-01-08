@@ -8,9 +8,7 @@ task('copy', () => {
 });
 
 task('build_html', () => {
-  // return src(['src/templates/build/**', '!src/templates/helper/**']).pipe(compile()).pipe(dest('dist'));
   return src('src/templates/*.html').pipe(compile()).pipe(dest('dist'));
-  // return src('src/templates/build/*').pipe(dest('dist'));
 });
 
 task('build_js', () => {
