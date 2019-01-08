@@ -62,8 +62,7 @@ const position_coordinates = [{}, {}, {}];
 let current_position_index = 0;
 let small;
 
-// TODO: This function needs to be hooked up to a resize event listener.
-function calculate_coordinates() {
+function  calculate_coordinates() {
   ball_positions.forEach(function (position, index) {
     position_coordinates[index] = position.element.offset();
   });
@@ -136,23 +135,4 @@ window.addEventListener('resize', () => {
     calculate_coordinates();
     animate();
   }, 300);
-});
-
-$('#contact').click(function () {
-  $('#contact-popup').animate({
-    left: '10%',
-    right: '10%'
-  }, 500);
-  $('#page-mask').animate({
-    opacity: '1'
-  }, 500);
-});
-$('#close').click(function () {
-  $('#contact-popup').animate({
-    left: '-50%',
-    right: '150%'
-  }, 500);
-  $('#page-mask').animate({
-    opacity: '0'
-  }, 500);
 });
