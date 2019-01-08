@@ -196,4 +196,11 @@
   html {
     font-size: 18px;
   }
+
+  #helper {
+    position: absolute;
+    top: calc(50% + 20px);
+    left: calc(50% + 96px);
+    opacity: 0;
+  }
 }
