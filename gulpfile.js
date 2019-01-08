@@ -4,15 +4,17 @@ const { exclude } = require('gulp-ignore');
 const minify = require('gulp-minify');
 
 task('copy', () => {
-  return src(['src/**', '!src/templates/**', '!src/js/**']).pipe(dest('dist'));
+  return src('src/static/**/*').pipe(dest('dist'));
 });
 
 task('build_html', () => {
-  return src(['src/templates/**', '!src/templates/helper/**']).pipe(compile()).pipe(dest('dist'));
+  // return src(['src/templates/build/**', '!src/templates/helper/**']).pipe(compile()).pipe(dest('dist'));
+  return src('src/templates/*.html').pipe(compile()).pipe(dest('dist'));
+  // return src('src/templates/build/*').pipe(dest('dist'));
 });
 
 task('build_js', () => {
-  return src('src/js/**').pipe(minify({
+  return src('src/js/**/*').pipe(minify({
     ext: {
       src: '-ignore.js',
       min: '.js'
@@ -23,5 +25,5 @@ task('build_js', () => {
 task('default', parallel('copy', 'build_html', 'build_js'));
 
 task('watch', function() {
-  watch('src/**', parallel('copy', 'build_html', 'build_js'));
+  watch('src/**/*', parallel('copy', 'build_html', 'build_js'));
 });
