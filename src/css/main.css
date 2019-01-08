@@ -168,9 +168,10 @@
 }
 
 #helper {
-  position: relative;
-  top: 0;
-  left: 50%;
+  position: absolute;
+  top: calc(50% + 45px);
+  left: calc(50% + 257px);
+  opacity: 0;
 }
 
 #title-ball-position {

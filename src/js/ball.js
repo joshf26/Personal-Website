@@ -1,6 +1,7 @@
 const ANIMATION_TIME = 1000;
 
 const ball = $('#ball');
+const helper = $('#helper');
 
 /* Color codes:
    0 - Color Cycle
@@ -61,6 +62,7 @@ const position_coordinates = [{}, {}, {}];
 
 let current_position_index = 0;
 let small;
+let helper_shown = false;
 
 function  calculate_coordinates() {
   ball_positions.forEach(function (position, index) {
@@ -122,6 +124,13 @@ ball.click(() => {
     scrollTarget: ball_positions[current_position_index + 1].scroll_target,
     speed: 800
   });
+
+  if (helper_shown) {
+    helper.animate({
+      opacity: 0
+    }, 300);
+    helper_shown = false;
+  }
 });
 
 window.addEventListener('scroll', () => {
@@ -136,3 +145,13 @@ window.addEventListener('resize', () => {
     animate();
   }, 300);
 });
+
+if (window.scrollY === 0) {
+  helper_shown = true;
+  setTimeout(() => {
+    if (helper_shown)
+      helper.animate({
+        opacity: 1
+      }, 300);
+  }, 2000);
+}
