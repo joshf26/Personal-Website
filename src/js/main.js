@@ -1,135 +1,143 @@
-const ball_inline = $('#ballinline');
+const ANIMATION_TIME = 1000;
+
 const ball = $('#ball');
 
-let ball_pos;
-let about_pos;
-let project_pos;
+/* Color codes:
+   0 - Color Cycle
+   1 - Orange
+   2 - Blue
+ */
+const ball_positions = [
+  {
+    element: $('#title-ball-pos'),
+    scroll_target: $('#titletarget'),
+    offset: {
+      top: 110,
+      left: 16
+    },
+    size: '15px',
+    small_offset: {
+      top: 40,
+      left: 7
+    },
+    small_size: '10px',
+    color: 0,
+  },
+  {
+    element: $('#aboutballpos'),
+    scroll_target: $('#abouttarget'),
+    offset: {
+      top: 20,
+      left: 9
+    },
+    size: '10px',
+    small_offset: {
+      top: 15,
+      left: 7
+    },
+    small_size: '8px',
+    color: 1,
+  },
+  {
+    element: $('#projectsballpos'),
+    scroll_target: $('#projectstarget'),
+    offset: {
+      top: 20,
+      left: 0
+    },
+    size: '400px',
+    small_offset: {
+      top: 15,
+      left: 0
+    },
+    small_size: '300px',
+    center: true,
+    color: 2,
+    under: true
+  },
+];
 
-let current_section = 0;
-let enable_scroll_detection = true;
+const position_coordinates = [{}, {}, {}];
 
-function init() {
-  let document_rect = document.body.getBoundingClientRect();
+let current_position_index = 0;
+let small;
 
-  let ball_rect = ball_inline.get(0).getBoundingClientRect();
-  ball_pos = {
-    top: ball_rect.top - document_rect.top,
-    left: ball_rect.left - document_rect.left
-  };
-
-  let about_rect = $('#ballpos1').get(0).getBoundingClientRect();
-  about_pos = {
-    top: about_rect.top - document_rect.top,
-    left: about_rect.left - document_rect.left
-  };
-
-  let project_rect = $('#ballpos2').get(0).getBoundingClientRect();
-  project_pos = {
-    top: project_rect.top - document_rect.top,
-    left: project_rect.left - document_rect.left
-  };
-
-  update_scroll(false, true);
-}
-
-function show_ball(from_title) {
-  ball.css('display', 'block');
-  if (from_title) {
-    ball_inline.css('visibility', 'hidden');
-    ball.css('backgroundColor', ball_inline.css('color'));
-    ball.css('top', (ball_pos.top + 128) + 'px');
-    ball.css('left', (ball_pos.left + 17) + 'px');
-  }
-}
-
-function go_to_title(current_section) {
-  ball.animate({
-    top: (ball_pos.top + 128) + 'px',
-    height: '15px',
-    width: '15px',
-    left: (ball_pos.left + 17) + 'px'
-  }, 1000, function () {
-    ball.css('display', 'none');
-    ball_inline.css('visibility', 'visible');
+// TODO: This function needs to be hooked up to a resize event listener.
+function calculate_coordinates() {
+  ball_positions.forEach(function (position, index) {
+    position_coordinates[index] = position.element.offset();
   });
+
+  small = window.innerWidth < 900;
 }
 
-function go_to_about(current_section, first, force) {
-  // Replace the period in the sentence with a ball for animation.
-  show_ball(current_section === 0 || first);
-
-  // Start the ball as orange and make it shrink.
-  ball.animate({
-    backgroundColor: '#bf360c',
-    left: (about_pos.left + 10) + 'px',
-    height: '10px',
-    width: '10px',
-    top: (about_pos.top + 20) + 'px'
-  }, force ? 0 : 1000);
-
-  setTimeout(function () {
-    ball.css('zIndex', '');
-  }, 500);
-}
-
-function go_to_projects(current_section, first) {
-  show_ball(first);
+function animate() {
+  const position = ball_positions[current_position_index];
+  const coordinates = position_coordinates[current_position_index];
 
   ball.animate({
-    backgroundColor: 'blue',
-    left: '50%',
-    height: '400px',
-    width: '400px',
-    top: (project_pos.top + 30) + 'px'
-  }, 1000);
+    top: (coordinates.top + (small ? position.small_offset.top : position.offset.top)) + 'px',
+    left: position.center ? '50%' : (coordinates.left + (small ? position.small_offset.left : position.offset.left)) + 'px',
+    height: small ? position.small_size : position.size,
+    width: small ? position.small_size : position.size,
+    backgroundColor: position.color === 1 ? '#bf360c' : 'blue',
+  }, ANIMATION_TIME);
 
-  setTimeout(function () {
-    ball.css('zIndex', '-1');
-  }, 500);
-}
-
-const section_animations = [go_to_title, go_to_about, go_to_projects, function () {}];
-const section_targets = [$('#title-target'), $('#about-target'), $('#projects-target'), function () {}];
-
-function update_scroll(first, force) {
-  if (!enable_scroll_detection) return;
-  if (typeof first !== "boolean") first = false;
-
-  let documentTop = $(window).scrollTop();
-  let new_section = Math.round(documentTop / window.innerHeight);
-  if (new_section !== current_section || force) {
-    section_animations[new_section](current_section, first, force);
-    current_section = new_section;
+  // Execute before animation.
+  if (position.color !== 0) {
+    ball.css('animation', 'none');
   }
+
+  // Execute half-way through animation.
+  setTimeout(() => {
+    if (position.under)
+      ball.css('z-index', '-1');
+    else
+      ball.css('z-index', '');
+  }, ANIMATION_TIME / 2);
+
+  // Execute after animation.
+  setTimeout(() => {
+    if (position.color === 0)
+      ball.css('animation', 'ballblink infinite linear 1.5s');
+  }, ANIMATION_TIME);
 }
 
-function click_handler() {
-  enable_scroll_detection = false;
+function update_ball(force) {
+  if (current_position_index !== 0 && window.scrollY < position_coordinates[current_position_index - 1].top)
+    current_position_index--;
+  else if (position_coordinates.length - 1 !== current_position_index && window.scrollY > position_coordinates[current_position_index].top) {
+    current_position_index++;
+  } else if (!force) return;
+
+  animate();
+}
+
+calculate_coordinates();
+update_ball(true);
+
+ball.click(() => {
+  if (current_position_index === ball_positions.length - 1) return;
+
   $.smoothScroll({
-    scrollTarget: section_targets[current_section + 1],
+    scrollTarget: ball_positions[current_position_index + 1].scroll_target,
     speed: 800
   });
-  setTimeout(function () {
-      enable_scroll_detection = true;
-    }, 800);
-  if (current_section < 2) {
-    section_animations[current_section + 1](current_section++);
-  }
-}
-
-window.addEventListener('resize', init);
-document.addEventListener('scroll', update_scroll);
-ball_inline.click(click_handler);
-ball.click(click_handler);
-$('#close').click(function () {
-  $('#contactpopup').animate({
-    left: '-50%',
-    right: '150%'
-  }, 500);
-  $('#pagemask').animate({
-    opacity: '0'
-  }, 500);
 });
+
+window.addEventListener('scroll', () => {
+  update_ball(false);
+});
+
+let resize_timeout;
+window.addEventListener('resize', () => {
+  clearTimeout(resize_timeout);
+  resize_timeout = setTimeout(() => {
+    calculate_coordinates();
+    animate();
+  }, 300);
+});
+
 $('#contact').click(function () {
   $('#contactpopup').animate({
     left: '10%',
@@ -139,6 +147,12 @@ $('#contact').click(function () {
     opacity: '1'
   }, 500);
 });
-
-init();
-update_scroll(true);
+$('#close').click(function () {
+  $('#contactpopup').animate({
+    left: '-50%',
+    right: '150%'
+  }, 500);
+  $('#pagemask').animate({
+    opacity: '0'
+  }, 500);
+});

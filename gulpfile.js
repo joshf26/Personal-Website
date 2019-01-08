@@ -6,7 +6,7 @@ task('copy', () => {
 });
 
 task('build', () => {
-  return src('src/templates/index.html').pipe(compile()).pipe(dest('dist'));
+  return src(['src/templates/**', '!src/templates/base.html']).pipe(compile()).pipe(dest('dist'));
 });
 
 task('default', parallel('copy', 'build'));
