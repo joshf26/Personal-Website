@@ -9,8 +9,8 @@ const ball = $('#ball');
  */
 const ball_positions = [
   {
-    element: $('#title-ball-pos'),
-    scroll_target: $('#titletarget'),
+    element: $('#title-ball-position'),
+    scroll_target: $('#title-target'),
     offset: {
       top: 110,
       left: 16
@@ -24,8 +24,8 @@ const ball_positions = [
     color: 0,
   },
   {
-    element: $('#aboutballpos'),
-    scroll_target: $('#abouttarget'),
+    element: $('#about-ball-pos'),
+    scroll_target: $('#about-target'),
     offset: {
       top: 20,
       left: 9
@@ -39,8 +39,8 @@ const ball_positions = [
     color: 1,
   },
   {
-    element: $('#projectsballpos'),
-    scroll_target: $('#projectstarget'),
+    element: $('#projects-ball-position'),
+    scroll_target: $('#projects-target'),
     offset: {
       top: 20,
       left: 0
@@ -139,20 +139,20 @@ window.addEventListener('resize', () => {
 });
 
 $('#contact').click(function () {
-  $('#contactpopup').animate({
+  $('#contact-popup').animate({
     left: '10%',
     right: '10%'
   }, 500);
-  $('#pagemask').animate({
+  $('#page-mask').animate({
     opacity: '1'
   }, 500);
 });
 $('#close').click(function () {
-  $('#contactpopup').animate({
+  $('#contact-popup').animate({
     left: '-50%',
     right: '150%'
   }, 500);
-  $('#pagemask').animate({
+  $('#page-mask').animate({
     opacity: '0'
   }, 500);
 });
