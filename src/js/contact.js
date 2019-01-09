@@ -1,4 +1,4 @@
-$('#contact').click(function () {
+function openPopup() {
   $('#contact-popup').animate({
     left: '10%',
     right: '10%'
@@ -6,7 +6,8 @@ $('#contact').click(function () {
   $('#page-mask').animate({
     opacity: '1'
   }, 500);
-});
+}
+$('#contact-button').click(openPopup);
 
 $('#close').click(function () {
   $('#contact-popup').animate({
@@ -17,3 +18,6 @@ $('#close').click(function () {
     opacity: '0'
   }, 500);
 });
+
+if (window.location.href.endsWith('#contact'))
+  openPopup();

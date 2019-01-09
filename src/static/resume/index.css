@@ -1,0 +1,56 @@
+body {
+    background-color: black;
+    color: #0F0;
+    font-family: 'Consolas', 'Monaco', 'Bitstream Vera Sans Mono', monospace;
+    font-size: 18px;
+}
+
+img {
+    border: solid white 5px;
+    margin: 25px;
+}
+
+html, body, #output > p, #permanent > p {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+#prompt-wrapper {
+    padding: 0 25px 25px;
+    display: flex;
+}
+
+#prompt-wrapper > span {
+    flex: 0;
+}
+
+#prompt {
+    flex: 1;
+}
+
+#prompt > input {
+    background: inherit;
+    border: 0;
+    color: inherit;
+    font: inherit;
+    outline: none;
+    width: 100%;
+}
+
+#suggestion {
+    position: absolute;
+    color: darkgreen;
+    z-index: -1;
+}
+
+#output {
+    padding: 25px 25px 0;
+}
+
+#permanent {
+    padding: 25px 0 0 25px;
+}
+
+#output > p, #permanent > p {
+    white-space: pre-wrap;
+}

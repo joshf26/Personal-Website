@@ -1,0 +1,79 @@
+td {
+	font-size: 18px;
+}
+
+th > i {
+	font-weight: normal;
+}
+
+.full {
+	height: 100vh;
+}
+
+.contain {
+	min-height: 700px;
+}
+
+.tooltipped {
+	background-color: #e65100;
+	border-radius: 25px;
+	padding: 3px 10px;
+	color: white;
+}
+
+@media (max-width: 700px) {
+	#landingTitle {
+		font-size: 10vw;
+	}
+	#aboutCardImage {
+		display: none;
+	}
+	table, table > tbody > tr > td, table > tbody > tr > td > a {
+		font-size: 11px !important;
+		padding: 2px !important;
+	}
+	.card-content {
+		font-size: 2.5vw;
+	}
+	.card-action > a {
+		padding: 8px !important;
+		line-height: 36px !important;
+	}
+}
+
+@media (min-width: 700px) {
+	#landingTitle {
+		font-size: 120px;
+	}
+	#aboutCardImage {
+		background-image: url("https://firebasestorage.googleapis.com/v0/b/website-23ad0.appspot.com/o/josh1.jpg?alt=media&token=7f7ad56e-3989-4ed5-97f0-daf0db4da18e");
+		background-size: auto 100%;
+		background-repeat: no-repeat;
+		background-position: -80px center;
+		width: 30%;
+	}
+}
+
+@media (max-width: 900px) {
+	#aboutCardImage {
+		background-image: url("https://firebasestorage.googleapis.com/v0/b/website-23ad0.appspot.com/o/josh1.jpg?alt=media&token=7f7ad56e-3989-4ed5-97f0-daf0db4da18e");
+		background-size: auto 100%;
+		background-repeat: no-repeat;
+		background-position: -120px center;
+		width: 30%;
+	}
+}
+
+#landingTitle {
+	margin: 0;
+	padding: 0;
+}
+
+#tableFooter {
+	font-size: 12px;
+	float: right;
+}
+
+#landingText {
+	font-size: 24px;
+}

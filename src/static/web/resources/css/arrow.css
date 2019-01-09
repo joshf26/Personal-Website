@@ -1,0 +1,19 @@
+#arrows {
+	width: 120px;
+	height: 72px;
+    animation: arrow 0.5s infinite;
+    animation-direction: alternate-reverse;
+    animation-timing-function: ease-in-out;
+}
+
+#arrows path {
+	stroke: #FFF;
+	fill: transparent;
+	stroke-width: 2px;
+}
+
+@keyframes arrow
+{
+    0% {padding-top: 20px}
+    100% {padding-top: 30px}
+}

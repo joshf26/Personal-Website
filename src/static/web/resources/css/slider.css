@@ -1,0 +1,77 @@
+@media (max-width: 600px) {
+	.slider {
+		height: 400px !important;
+	}
+	.slides {
+		height: 100% !important;
+	}
+	.slider-list-item {
+		width: 100% !important;
+	}
+	.right-webpage-caption {
+		background-color: #212121;
+		width: 90% !important;
+		padding: 25px;
+		left: 5% !important;
+		box-shadow: 2px 4px 8px rgba(0, 0, 0, .5);
+	}
+
+	.left-webpage-caption {
+		background-color: #212121;
+		width: 90% !important;
+		padding: 25px;
+		left: 5% !important;
+		box-shadow: 2px 4px 8px rgba(0, 0, 0, .5);
+	}
+
+	.caption-link {
+		font-size: 20px;
+	}
+
+	.left-webpage {
+		background-position: top !important;
+		filter:blur(5px);
+	}
+
+	.right-webpage {
+		background-position: top !important;
+		filter:blur(5px);
+	}
+}
+@media (min-width: 600px) {
+	.slider-list-item {
+		background-position: center;
+		background-size: auto 100%;
+		background-image: url("https://firebasestorage.googleapis.com/v0/b/website-23ad0.appspot.com/o/background.jpg?alt=media&token=ade14dc8-9f59-4418-beee-1ab6ea47502d");
+	}
+
+	.right-webpage-caption {
+		width: 30% !important;
+		left: auto !important;
+		right: 15% !important;
+	}
+
+	.left-webpage-caption {
+		width: 30% !important;
+	}
+
+	.caption-link {
+		font-size: 2vw;
+	}
+
+	.left-webpage {
+		position: absolute;
+		background-position: top !important;
+		width: 35% !important;
+		left: 15%;
+		top: 50px;
+	}
+
+	.right-webpage {
+		position: absolute;
+		background-position: top !important;
+		width: 35% !important;
+		right: 15%;
+		top: 50px;
+	}
+}
