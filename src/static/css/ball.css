@@ -26,3 +26,10 @@
   left: calc(50% + 257px);
   opacity: 0;
 }
+
+@media (max-width: 900px) {
+  #helper {
+    top: calc(50% + 20px);
+    left: calc(50% + 96px);
+  }
+}
