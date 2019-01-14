@@ -64,7 +64,7 @@ let current_position_index = 0;
 let small;
 let helper_shown = false;
 
-function  calculate_coordinates() {
+function calculate_coordinates() {
   ball_positions.forEach(function (position, index) {
     position_coordinates[index] = position.element.offset();
   });
@@ -120,6 +120,12 @@ function update_ball(force) {
   animate();
 }
 
+function position_helper() {
+  let offset = ball.offset();
+  helper.css('top', (offset.top + (small ? 10 : 20)) + 'px');
+  helper.css('left', (offset.left + (small ? 2 : 3)) + 'px');
+}
+
 calculate_coordinates();
 update_ball(true);
 
@@ -148,9 +154,10 @@ window.addEventListener('resize', () => {
 if (window.scrollY === 0) {
   helper_shown = true;
   setTimeout(() => {
+    position_helper();
     if (helper_shown)
       helper.animate({
         opacity: 1
-      }, 300);
+      }, 400);
   }, 2000);
 }
