@@ -36,7 +36,7 @@
 }
 
 #title {
-  font-size: 48px;
+  width: 300px;
 }
 
 #about {
@@ -70,7 +70,7 @@
 
 @media (min-width: 900px) {
   #title {
-    font-size: 128px;
+    width: 700px;
   }
 
   #projects-container {

@@ -36,7 +36,7 @@ const possibleInputs = {
     'hireme': {
         'action': function() {
             print('Opening in new tab. Make sure your browser allows popups.');
-            window.open('https://www.joshfrankl.in/ #contact');
+            window.open('https://www.joshfrankl.in/#contact');
         }
     },
     'education': {
@@ -141,7 +141,7 @@ const possibleInputs = {
     'portfolio': {
         'action': function() {
             print('Opening in new tab. Make sure your browser allows popups.');
-            window.open('https://www.joshfrankl.in#mywork');
+            window.open('https://www.joshfrankl.in/web#mywork');
         }
     },
     'extracurricular': {
@@ -158,13 +158,14 @@ const possibleInputs = {
 
             print('<br>');
 
-            print('<b>CU Game Development Club</b>');
-            print('2017 - Present');
+            print('<b>CU Local Hack Day</b>');
+            print('2018');
+            print('<i>Winner of the "Most Random Hack" prize.</i>');
 
             print('<br>');
 
-            print('<b>HackCU Hackathon 2018</b>');
-            print('<i>Developed a mobile game that featured real-time communication with other phones.</i>');
+            print('<b>CU Game Development Club</b>');
+            print('2017 - Present');
 
             print('<br>');
 

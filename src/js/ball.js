@@ -10,16 +10,16 @@ const helper = $('#helper');
  */
 const ball_positions = [
   {
-    element: $('#title-ball-position'),
+    element: $('#title'),
     scroll_target: $('#title-target'),
     offset: {
-      top: 110,
-      left: 16
+      top: 81,
+      left: 595
     },
     size: '15px',
     small_offset: {
-      top: 40,
-      left: 7
+      top: 33,
+      left: 255
     },
     small_size: '10px',
     color: 0,
@@ -63,6 +63,8 @@ const position_coordinates = [{}, {}, {}];
 let current_position_index = 0;
 let small;
 let helper_shown = false;
+let animating = false;
+let try_again = false;
 
 function calculate_coordinates() {
   ball_positions.forEach(function (position, index) {
@@ -73,16 +75,30 @@ function calculate_coordinates() {
 }
 
 function animate() {
+  if (animating) {
+    try_again = true;
+    return;
+  }
+
   const position = ball_positions[current_position_index];
   const coordinates = position_coordinates[current_position_index];
 
+  animating = true;
   ball.animate({
     top: (coordinates.top + (small ? position.small_offset.top : position.offset.top)) + 'px',
     left: position.center ? '50%' : (coordinates.left + (small ? position.small_offset.left : position.offset.left)) + 'px',
     height: small ? position.small_size : position.size,
     width: small ? position.small_size : position.size,
     backgroundColor: position.color === 1 ? '#bf360c' : 'blue',
-  }, ANIMATION_TIME);
+  }, ANIMATION_TIME, () => {
+    if (position.color === 0)
+      ball.css('animation', 'ballblink infinite linear 1.5s');
+    animating = false;
+    if (try_again) {
+      try_again = false;
+      animate();
+    }
+  });
 
   // Execute before animation.
   if (position.color !== 0)
@@ -102,12 +118,6 @@ function animate() {
     else
       ball.css('z-index', '');
   }, ANIMATION_TIME / 2);
-
-  // Execute after animation.
-  setTimeout(() => {
-    if (position.color === 0)
-      ball.css('animation', 'ballblink infinite linear 1.5s');
-  }, ANIMATION_TIME);
 }
 
 function update_ball(force) {
@@ -123,7 +133,7 @@ function update_ball(force) {
 function position_helper() {
   let offset = ball.offset();
   helper.css('top', (offset.top + (small ? 10 : 20)) + 'px');
-  helper.css('left', (offset.left + (small ? 2 : 3)) + 'px');
+  helper.css('left', (offset.left + (small ? -72 : -95)) + 'px');
 }
 
 calculate_coordinates();
