@@ -4,7 +4,7 @@ const possibleInputs = {
             print('<b>help</b> - Display this message.');
             print('<b>about</b> - About Josh.');
             print('<b>website</b> - Visit Josh\'s website.');
-            print('<b>pdf</b> - View a PDF version of this résumé.');
+            print('<b>pdf</b> - View a PDF version of this resume.');
             print('<b>education</b> - Where Josh goes to school.');
             print('<b>experience</b> - Past professional work experience.');
             print('<b>skills</b> - See what Josh can do.');
@@ -43,7 +43,7 @@ const possibleInputs = {
         'action': function() {
             print('<b>University of Colorado Boulder</b>');
             print('August 2017 - May 2021 (Expected Graduation Date)');
-            print('<i>Pursuing BS in Computer Science.</i>');
+            print('<i>Pursuing BS in Computer Science and minor in Space.</i>');
             print('<br>');
             print('<b>Natick High School</b>');
             print('2013 - 2017');
