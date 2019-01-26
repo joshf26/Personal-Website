@@ -52,9 +52,9 @@ const possibleInputs = {
     },
     'experience': {
         'action': function() {
-            print('<b>Computer Science Course Assistance</b>');
+            print('<b>Computer Science Course Assistant</b>');
             print('University of Colorado Boulder - Boulder, CO');
-            print('2018 - Present');
+            print('2018');
             print('<i>Hold office hours and answer student questions for the "Starting Computing" course at CU Boulder.</i>');
             print('<b>Skills Applied:</b> C++, Python, Teaching.');
 
@@ -91,7 +91,7 @@ const possibleInputs = {
 
             print('<br>');
 
-            print('<b>Volunteer Tehnology Assistant</b>');
+            print('<b>Volunteer Technology Assistant</b>');
             print('Council on Aging - Natick, MA');
             print('2013 - 2017');
             print('<i>Taught technology skills to senior citizens and helped senior center staff with IT problems.</i>');
