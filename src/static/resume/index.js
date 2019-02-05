@@ -55,7 +55,7 @@ const possibleInputs = {
             print('<b>Computer Science Course Assistant</b>');
             print('University of Colorado Boulder - Boulder, CO');
             print('2018');
-            print('<i>Hold office hours and answer student questions for the "Starting Computing" course at CU Boulder.</i>');
+            print('<i>Held office hours and answered students\' questions for the "Starting Computing" course at CU Boulder.</i>');
             print('<b>Skills Applied:</b> C++, Python, Teaching.');
 
             print('<br>');
@@ -154,24 +154,19 @@ const possibleInputs = {
 
             print('<b>CU Cyber Security Club</b>');
             print('2017 - Current');
-            print('<i>Learned many cyber security defense and attack methods.</i>');
+            print('<i>Learn about cyber security attacks and defences, and participate in simulated hacking challenges.</i>');
+
+            print('<br>');
+
+            print('<b>Lucid Programming Competition</b>');
+            print('2019');
+            print('<i>Winner of the 1st place prize.</i>');
 
             print('<br>');
 
             print('<b>CU Local Hack Day</b>');
-            print('2018');
+            print('2019');
             print('<i>Winner of the "Most Random Hack" prize.</i>');
-
-            print('<br>');
-
-            print('<b>CU Game Development Club</b>');
-            print('2017 - Present');
-
-            print('<br>');
-
-            print('<b>Natick High School Robotics Club</b>');
-            print('2015 - 2017');
-            print('<i>Lead programmer on the FTC team #6032. Responsible for teaching younger students how to program in Java and practice version control using Git.</i>');
         }
     },
 

@@ -51,4 +51,6 @@
 /* Interactive Resume */
 #project-interactiveresume {
   background-image: url("/img/project-interactiveresume.gif");
+  background-color: black;
+  background-repeat: no-repeat;
 }
