@@ -44,6 +44,8 @@ const possibleInputs = {
             print('<b>University of Colorado Boulder</b>');
             print('August 2017 - May 2021 (Expected Graduation Date)');
             print('<i>Pursuing BS in Computer Science and minor in Space.</i>');
+            print('<b>Overall Cumulative GPA</b>: 3.673');
+            print('<b>Computer Science GPA</b>: 4.0');
             print('<br>');
             print('<b>Natick High School</b>');
             print('2013 - 2017');
