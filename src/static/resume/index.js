@@ -73,7 +73,7 @@ const possibleInputs = {
             print('<b>Software Engineering Intern</b>');
             print('PatientKeeper - Waltham, MA');
             print('Summer 2015');
-            print('<i>Responsible for creating web-based backend debugging tool. Mentor complimented work, stating it felt professional and polished.</i>');
+            print('<i>Responsible for creating a web-based backend debugging tool. Mentor complimented work, stating it felt professional and polished.</i>');
             print('<b>Skills Applied:</b> HTML, CSS, JavaScript, Java, JSP, SQL, Working on a Team');
 
             print('<br>');
@@ -162,13 +162,19 @@ const possibleInputs = {
 
             print('<b>Lucid Programming Competition</b>');
             print('2019');
-            print('<i>Winner of the 1st place prize.</i>');
+            print('<i>Winner of 1st place.</i>');
+
+            print('<br>');
+
+            print('<b>T9Hacks</b>');
+            print('2019');
+            print('<i>Winner of "Best Community Hack".</i>');
 
             print('<br>');
 
             print('<b>CU Local Hack Day</b>');
             print('2019');
-            print('<i>Winner of the "Most Random Hack" prize.</i>');
+            print('<i>Winner of "Most Random Hack".</i>');
         }
     },
 
