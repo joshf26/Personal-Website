@@ -1,4 +1,3 @@
-var parallaxElements = document.querySelectorAll('.parallax');
-for (parallaxElementIndex in parallaxElements) {
-    new M.Parallax(parallaxElements[parallaxElementIndex]);
-}
+document.addEventListener('DOMContentLoaded', function () {
+  M.Parallax.init(document.querySelectorAll('.parallax'), {});
+});
