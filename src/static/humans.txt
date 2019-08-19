@@ -1,7 +1,3 @@
 # TEAM
 
-    Joshua Franklin -- Web Developer -- github.com/joshf26
-
-# TECHNOLOGY COLOPHON
-
-    CSS3, HTML5, jQuery, Normalize.css
+    Joshua Franklin -- github.com/joshf26

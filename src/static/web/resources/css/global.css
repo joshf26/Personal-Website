@@ -1,29 +1,45 @@
 a {
-	color: #bf360c;
+  color: #bf360c;
 }
 
 input[type=text]:focus {
-    border-bottom: 1px solid #e65100 !important;
-    box-shadow: 0 1px 0 0 #e65100 !important;
+  border-bottom: 1px solid #e65100 !important;
+  box-shadow: 0 1px 0 0 #e65100 !important;
 }
 
 textarea:focus {
-    border-bottom: 1px solid #e65100 !important;
-    box-shadow: 0 1px 0 0 #e65100 !important;
+  border-bottom: 1px solid #e65100 !important;
+  box-shadow: 0 1px 0 0 #e65100 !important;
 }
 
 .cover {
-	background-color: #212121;
-	padding: 50px 0;
+  background-color: #212121;
+  padding: 50px 0;
 }
 
 .vertical-center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .vertical-center > h1 {
-    margin-top: 0;
+  margin-top: 0;
+}
+
+.deprecated {
+  text-decoration: line-through white;
+}
+
+.notice {
+  background-color: yellow;
+  padding: 20px;
+  margin-top: 20px;
+  position: absolute;
+  right: 10%;
+  transform: rotateZ(20deg);
+  text-align: center;
+  width: 200px;
+  font-size: 18px;
 }
