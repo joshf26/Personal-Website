@@ -10,14 +10,12 @@ const possibleInputs = {
       print('<b>skills</b> - See what Josh can do.');
       print('<b>portfolio</b> - Past creative projects.');
       print('<b>extracurricular</b> - Clubs and activities.');
-      print('<b>hireme</b> - Get in touch.');
+      print('<b>contact</b> - Get in touch.');
     }
   },
   'about': {
     'action': function() {
-      print('Hi. My name is Joshua Franklin, and I am currently studying Computer Science at the University of Colorado at Boulder. In my free time, I design websites and create music, videos, and software I think are worth sharing.');
-      print('<br>');
-      print('My interest in computers has lasted throughout all my life. I have been coding computers for many years, and recently I have been putting these skills into web development.');
+      print('Hi. My name is Joshua Franklin. I am currently studying at the University of Colorado at Boulder, pursuing a BS in Computer Science and a minor in Space. Outside of school, I enjoy biking, hiking, and competing in hackathons.');
       print('<img src="https://firebasestorage.googleapis.com/v0/b/website-23ad0.appspot.com/o/josh1.jpg?alt=media&token=7f7ad56e-3989-4ed5-97f0-daf0db4da18e" alt="Josh" width="400px">');
     }
   },
@@ -33,7 +31,7 @@ const possibleInputs = {
       window.open('https://www.joshfrankl.in/resume.pdf');
     }
   },
-  'hireme': {
+  'contact': {
     'action': function() {
       print('Opening in new tab. Make sure your browser allows popups.');
       window.open('https://www.joshfrankl.in/#contact');
@@ -41,71 +39,58 @@ const possibleInputs = {
   },
   'education': {
     'action': function() {
-      print('<b>University of Colorado Boulder</b>');
-      print('August 2017 - May 2021 (Expected Graduation Date)');
-      print('<i>Pursuing BS in Computer Science and minor in Space.</i>');
-      print('<b>Overall Cumulative GPA</b>: 3.673');
-      print('<b>Computer Science GPA</b>: 4.0');
-      print('<br>');
-      print('<b>Natick High School</b>');
-      print('2013 - 2017');
-      print('<i>Honor Roll/High Honor Roll: 2013 - 2017</i>');
+      print('<b>Computer Science Major and Space Minor, May 2021</b>');
+      print('<i>University of Colorado at Boulder</i>');
+      print('Overall Cumulative GPA: <b>3.673</b>');
+      print('Computer Science GPA: <b>4.0</b>');
     }
   },
   'experience': {
     'action': function() {
-      print('<b>Software Engineering Intern</b>');
+      print('<b>Software Engineering Intern, Summer 2019</b>');
       print('Lucid Software - Greater Salt Lake City Area');
-      print('Summer 2019');
-      print('<i>Worked on various high level refactors like framework migration and dependency injection.</i>');
-      print('<b>Skills Applied:</b> TypeScript, Scala, Angular, Play, Git, Agile');
+      print('<i>&bullet; Integrated various high level refactors like framework migration and dependency injection.</i>');
+      print('<i>&bullet; Participated in the company\'s Hackathon, where my team extended our product\'s flowcharting tools to allow flowcharts to be run like a computer program.</i>');
+      print('<b>Skills Applied:</b> TypeScript, Scala, Angular, Less, Play, Git, Agile');
 
       print('<br>');
 
-      print('<b>Software Engineering Intern</b>');
+      print('<b>Software Engineering Intern, Summer 2018</b>');
       print('Cambridge Mobile Telematics - Greater Boston Area');
-      print('Summer 2018');
-      print('<i>Worked on web portal that utilized a Python/Django and PhP backend.</i>');
+      print('<i>&bullet; Created new features for a web portal that utilized a Python/Django and PhP backend.</i>');
+      print('<i>&bullet; Worked with continuous customer feedback to tune the service to meet customer needs.</i>');
       print('<b>Skills Applied:</b> Python, Django, SQL, PhP, HTML, JavaScript, CSS, Git, Agile');
 
       print('<br>');
 
-      print('<b>Software Engineering Intern</b>');
+      print('<b>Software Engineering Intern, Summer 2015</b>');
       print('PatientKeeper - Greater Boston Area');
-      print('Summer 2015');
-      print('<i>Responsible for creating a web-based backend debugging tool. Mentor complimented work, stating it felt professional and polished.</i>');
-      print('<b>Skills Applied:</b> HTML, CSS, JavaScript, Java, JSP, SQL');
+      print('<i>&bullet; Created web-based backend debugging tool.</i>');
+      print('<i>&bullet; Worked closely with developers to tailor tool to their needs.</i>');
+      print('<b>Skills Applied:</b> Java, JSP, HTML, CSS, JavaScript, SQL');
 
       print('<br>');
 
-      print('<b>Freelance Web Developer</b>');
-      print('2016 - 2019');
-      print('<i>Designed and developed websites for small businesses. Type "portfolio" to see my past work!</i>');
-      print('<b>Skills Applied:</b> HTML, CSS, JavaScript, Firebase, Python (Flask/Django), WordPress');
+      print('<b>Freelance Web Developer, 2016 - 2019</b>');
+      print('<i>&bullet; Designed and developed websites for small businesses.</i>');
+      print('<i>&bullet; Experimented with design, and learned what makes a great user interface.</i>');
+      print('<i>&bullet; Type "portfolio" to see my past work!</i>');
+      print('<b>Skills Applied:</b> HTML, CSS, JavaScript, WordPress');
 
       print('<br>');
 
-      print('<b>Computer Science Course Assistant</b>');
-      print('University of Colorado Boulder - Boulder, CO');
-      print('2018 Spring and Fall Semesters');
-      print('<i>Held office hours and answered students\' questions for the "Starting Computing" course at CU Boulder.</i>');
+      print('<b>Computer Science Course Assistant, Spring and Fall 2018</b>');
+      print('University of Colorado at Boulder - Boulder, CO');
+      print('<i>&bullet; Held office hours and answered students’ questions for the "Starting Computing" course at CU Boulder.</i>');
+      print('<i>&bullet; Learned how to effectively teach students computer programming skills.</i>');
       print('<b>Skills Applied:</b> C++, Python, Teaching');
 
       print('<br>');
 
-      print('<b>Computer Science Private Tutor</b>');
-      print('University of Colorado Boulder - Boulder, CO');
-      print('2017 - Present');
-      print('<i>Tutor students in many computer science and math courses at CU Boulder.</i>');
-      print('<b>Skills Applied:</b> C++, Python, HTML, CSS, JavaScript, SQL, Assembly, Discrete Math');
-
-      print('<br>');
-
-      print('<b>Volunteer Technology Assistant</b>');
+      print('<b>Volunteer Technology Assistant, 2013 - 2017</b>');
       print('Council on Aging - Natick, MA');
-      print('2013 - 2017');
-      print('<i>Taught technology skills to senior citizens and helped senior center staff with IT problems.</i>');
-      print('<b>Skills Applied:</b> IT, Tech Support, Microsoft Office');
+      print('<i>&bullet; Taught technology skills to senior citizens and helped senior center staff with IT problems.</i>');
+      print('<b>Skills Applied:</b> IT, Tech Support, Microsoft Office, Teaching');
     }
   },
   'skills': {
@@ -132,9 +117,11 @@ const possibleInputs = {
       },
       'web development': function() {
         print('HTML/CSS/JavaScript [################EXPERT################]');
+        print('TypeScript          [################EXPERT################]');
         print('Django              [##########PROFICIENT##########        ]');
         print('Flask               [##########PROFICIENT##########        ]');
         print('SQL                 [##########PROFICIENT##########        ]');
+        print('Angular             [#####INTERMEDIATE#####                ]');
         print('Firebase            [#####INTERMEDIATE#####                ]');
         print('Play                [#####INTERMEDIATE#####                ]');
         print('jQuery              [#####INTERMEDIATE#####                ]');
@@ -160,7 +147,7 @@ const possibleInputs = {
     'action': function() {
       print('<b>CU Computer Graphics Club</b>');
       print('2017 - Current');
-      print('<i>Vice President. Frequently give and listen to talks on computer graphics techniques.</i>');
+      print('<i><b>Vice President</b>. Frequently give and listen to talks on computer graphics techniques.</i>');
 
       print('<br>');
 
