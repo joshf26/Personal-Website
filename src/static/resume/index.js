@@ -107,12 +107,12 @@ const possibleInputs = {
         print('Python              [################EXPERT################]');
         print('HTML/CSS/JavaScript [################EXPERT################]');
         print('TypeScript          [################EXPERT################]');
+        print('Java                [##########PROFICIENT##########        ]');
         print('SQL                 [##########PROFICIENT##########        ]');
         print('Scala               [##########PROFICIENT##########        ]');
         print('Git                 [##########PROFICIENT##########        ]');
         print('C/C++               [#####INTERMEDIATE#####                ]');
         print('C#                  [#####INTERMEDIATE#####                ]');
-        print('Java                [#####INTERMEDIATE#####                ]');
         print('PhP                 [###BEGINNER###                        ]');
       },
       'web development': function() {
