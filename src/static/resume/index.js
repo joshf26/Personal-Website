@@ -57,9 +57,9 @@ const possibleInputs = {
 
       print('<b>Software Engineering Intern, Summer 2018</b>');
       print('Cambridge Mobile Telematics - Greater Boston Area');
-      print('<i>&bullet; Created new features for a web portal that utilized a Python/Django and PhP backend.</i>');
+      print('<i>&bullet; Created new features for a web portal that utilized a Python/Django and PHP backend.</i>');
       print('<i>&bullet; Worked with continuous customer feedback to tune the service to meet customer needs.</i>');
-      print('<b>Skills Applied:</b> Python, Django, SQL, PhP, HTML, JavaScript, CSS, Git, Agile');
+      print('<b>Skills Applied:</b> Python, Django, SQL, PHP, HTML, JavaScript, CSS, Git, Agile');
 
       print('<br>');
 
@@ -113,7 +113,7 @@ const possibleInputs = {
         print('Git                 [##########PROFICIENT##########        ]');
         print('C/C++               [#####INTERMEDIATE#####                ]');
         print('C#                  [#####INTERMEDIATE#####                ]');
-        print('PhP                 [###BEGINNER###                        ]');
+        print('PHP                 [###BEGINNER###                        ]');
       },
       'web development': function() {
         print('HTML/CSS/JavaScript [################EXPERT################]');
@@ -125,7 +125,7 @@ const possibleInputs = {
         print('Firebase            [#####INTERMEDIATE#####                ]');
         print('Play                [#####INTERMEDIATE#####                ]');
         print('jQuery              [#####INTERMEDIATE#####                ]');
-        print('PhP                 [###BEGINNER###                        ]');
+        print('PHP                 [###BEGINNER###                        ]');
         print('JSP                 [###BEGINNER###                        ]');
       },
       'music': function() {
