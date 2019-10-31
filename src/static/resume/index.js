@@ -153,7 +153,7 @@ const possibleInputs = {
 
       print('<b>CU Cyber Security Club</b>');
       print('2017 - Current');
-      print('<i>Learn about cyber security attacks and defences, and participate in simulated hacking challenges.</i>');
+      print('<i>Learn about cyber security attacks and defenses, and participate in simulated hacking challenges.</i>');
 
       print('<br>');
 
