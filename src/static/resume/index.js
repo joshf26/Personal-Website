@@ -41,7 +41,7 @@ const possibleInputs = {
     'action': function() {
       print('<b>Computer Science Major and Space Minor, May 2021</b>');
       print('<i>University of Colorado at Boulder</i>');
-      print('Overall Cumulative GPA: <b>3.7</b>');
+      print('Overall Cumulative GPA: <b>3.76</b>');
       print('Computer Science GPA: <b>4.0</b>');
     }
   },
