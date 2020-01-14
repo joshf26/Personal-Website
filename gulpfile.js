@@ -1,6 +1,6 @@
-const { task, watch, parallel, src, dest } = require('gulp');
-const { compile } = require('gulp-nunjucks');
-const { exclude } = require('gulp-ignore');
+const {task, watch, parallel, src, dest} = require('gulp');
+const {compile} = require('gulp-nunjucks');
+const {exclude} = require('gulp-ignore');
 const minify = require('gulp-minify');
 
 task('copy', () => {
