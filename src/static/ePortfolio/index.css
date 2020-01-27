@@ -1,0 +1,46 @@
+* {
+  color: white;
+}
+
+body {
+  background-color: black;
+}
+
+section {
+  background-color: #212121;
+  padding: 50px 0;
+}
+
+.vertical-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.parallax-container {
+  height: 100vh;
+}
+
+.parallax > img {
+  opacity: 0.5 !important;
+}
+
+#arrow {
+	width: 120px;
+	height: 72px;
+    animation: arrow 0.5s infinite;
+    animation-direction: alternate-reverse;
+    animation-timing-function: ease-in-out;
+}
+
+#arrow path {
+	stroke: #FFF;
+	fill: transparent;
+	stroke-width: 2px;
+}
+
+@keyframes arrow {
+    0% {padding-top: 20px}
+    100% {padding-top: 30px}
+}
