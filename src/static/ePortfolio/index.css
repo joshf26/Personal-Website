@@ -11,6 +11,14 @@ section {
   padding: 50px 0;
 }
 
+iframe {
+    border: 0;
+}
+
+a {
+    color: #4ab4ff;
+}
+
 @media (max-width: 700px) {
     .responsive-header {
         font-size: 10vw;
