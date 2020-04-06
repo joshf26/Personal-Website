@@ -29,6 +29,22 @@ p {
     }
 }
 
+.thumb {
+    display: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    background-color: red;
+}
+
+input[type=range]::-moz-range-thumb {
+    background-color: red;
+}
+
+input[type=range]::-ms-thumb {
+    background-color: red;
+}
+
 .vertical-center {
   position: absolute;
   top: 50%;
