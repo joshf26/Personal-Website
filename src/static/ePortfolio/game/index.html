@@ -14,11 +14,43 @@
 <section class="z-depth-5">
     <div class="container">
         <a href="..">Back</a>
-        <h1>Orders of Magnitude</h1>
-        <p class="range-field">
-            <input class="red-text" type="range" id="slider" min="1" max="32" value="1" oninput="magnitudeUpdate()">
-        </p>
-        <h1 class="center">10<sup id="magnitude">5</sup></h1>
+        <div class="center">
+            <h1>Orders of Magnitude</h1>
+            <p>Orders of Magnitude is a game where you have to guess which order of magnitude a certain property of an astronomical object is on.
+               To play, answer the question below by dragging the red dot across the slider until the order of magnitude below matches your guess.
+               When you are happy with your answer, press "Submit" to see your result and to move on to the next question.
+               The game ends after 10 questions.
+               See how high of a score you can get!</p>
+
+            <div class="card" style="width: 500px; margin: auto">
+                <div class="card-content">
+                    <p class="black-text">Score: <span class="black-text" id="score">0</span></p>
+                    <p id="result"></p>
+                    <p id="partial" class="black-text"></p>
+                </div>
+            </div>
+
+            <div class="hide-at-end">
+                <p>Question <span id="question-counter">1</span>/10</p>
+                <p id="question"></p>
+                <img id="image" src="" alt="" width="200px" style="filter: drop-shadow(5px 5px 5px black)">
+            </div>
+        </div>
+        <div class="hide-at-end">
+            <p class="range-field">
+                <input class="red-text" type="range" id="slider" min="1" max="42" value="1" oninput="magnitudeUpdate()">
+            </p>
+            <div class="center">
+                <h1>10<sup id="magnitude">1</sup> <span id="unit"></span></h1>
+                <button class="btn btn-large red" onclick="submit()">Submit</button>
+            </div>
+        </div>
+        <div class="show-at-end center" style="display: none">
+            <h4>Thanks For Playing!</h4>
+            <p>Your final score is <span id="final-score"></span>.</p>
+            <a href=".." class="btn red">Back to ePortfolio</a>
+            <button onclick="window.location.reload()" class="btn red">Play Again</button>
+        </div>
     </div>
 </section>
 
