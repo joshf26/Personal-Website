@@ -28,6 +28,24 @@ const OBJECTS = [
         },
     },
     {
+        'name': 'UY Scuti (Largest Star)',
+        'image': 'https://i.ibb.co/qx1FjdG/uy-scuti.png',
+        'properties': {
+            'radius': 12,
+            'mass': 31,
+            'temperature': 3,
+            'luminosity': 32,
+        },
+    },
+    {
+        'name': 'PSR J1748-2446ad (Smallest Star)',
+        'image': 'https://i.ibb.co/qJfWXh6/EBLM-J0555-57.png',
+        'properties': {
+            'radius': 4,
+            'mass': 30,
+        },
+    },
+    {
         'name': 'The Moon',
         'image': 'https://i.ibb.co/4Jp8jBc/moon.png',
         'properties': {
