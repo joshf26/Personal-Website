@@ -1,0 +1,114 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(141, 255, 255);
+}
+
+body, .layer {
+    height: 50000px;
+}
+
+.layer {
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+
+.layer > * {
+    position: absolute;
+}
+
+#rocket {
+    position: fixed;
+
+    width: 100px;
+    height: 150px;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#instructions {
+    left: 50%;
+    bottom: calc(-50vh - 200px);
+
+    width: 600px;
+    text-align: center;
+
+    transform: translateX(-50%);
+    color: white;
+    font-family: Helvetica, serif;
+}
+
+#cloud1 {
+    left: 15%;
+    bottom: 100px;
+
+    width: 150px;
+}
+
+#cloud2 {
+    right: 10%;
+    bottom: 510px;
+
+    width: 150px;
+}
+
+#cloud3 {
+    right: 30%;
+    bottom: 490px;
+}
+
+#cloud4 {
+    left: 30%;
+    bottom: -100px;
+
+    width: 50px;
+}
+
+#ground {
+    bottom: calc(-50vh - 72px);
+
+    width: 100%;
+    height: 20px;
+    background-image: url("assets/ground.svg");
+    background-size: 80px;
+}
+
+#underground {
+    bottom: calc(-100vh - 72px);
+
+    width: 100%;
+    height: 50vh;
+    background-image: url("assets/underground.svg");
+    background-size: 80px;
+}
+
+#stars1 {
+    bottom: 1800px;
+
+    width: 100%;
+    height: 8000px;
+
+    background-image: url("assets/stars1.svg");
+}
+
+#stars2 {
+    bottom: 1800px;
+
+    width: 100%;
+    height: 10000px;
+
+    background-image: url("assets/stars2.svg");
+}
+
+#moon {
+    left: 5%;
+    bottom: 3000px;
+
+    width: 200px;
+}
