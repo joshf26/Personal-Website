@@ -1,10 +1,11 @@
-const PAGE_HEIGHT = 50000;
+const PAGE_HEIGHT = 40000;
 
 const layer1 = document.getElementById('layer1');
 const layer2 = document.getElementById('layer2');
 const layer3 = document.getElementById('layer3');
 
 const rocket = document.getElementById('rocket');
+const end = document.getElementById('end');
 
 function updateLayers() {
     const scroll = Math.max(window.scrollY - 2000, 0);
@@ -30,7 +31,18 @@ function onScroll() {
         document.body.style.backgroundColor = `rgb(${red}, ${blueGreen}, ${blueGreen})`;
     }
 
-    updateLayers();
+    if (window.scrollY > 32000) {
+        rocket.style.top = `calc(50% - ${(window.scrollY - 32000) / 3}px)`;
+
+        if (window.scrollY > 33000) {
+            end.style.opacity = `${(window.scrollY - 33000) / 5}%`;
+        }
+    } else {
+        rocket.style.top = `50%`;
+        end.style.opacity = `0`;
+
+        updateLayers();
+    }
 }
 
 window.addEventListener('scroll', onScroll);
