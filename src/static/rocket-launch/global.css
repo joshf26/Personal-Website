@@ -89,8 +89,29 @@ button {
     width: 50px;
 }
 
-#ground {
+#cloud5 {
+    right: 40%;
+    bottom: -200px;
+
+    width: 90px;
+}
+
+#cloud6 {
+    left: 40%;
+    bottom: 250px;
+
+    width: 120px;
+}
+
+#station {
+    left: 50%;
+    width: 100px;
     bottom: calc(-50vh - 72px);
+    transform: translateX(-50%);
+}
+
+#ground {
+    bottom: calc(-50vh - 87px);
 
     width: 100%;
     height: 20px;
@@ -99,7 +120,7 @@ button {
 }
 
 #underground {
-    bottom: calc(-100vh - 72px);
+    bottom: calc(-100vh - 87px);
 
     width: 100%;
     height: 50vh;
