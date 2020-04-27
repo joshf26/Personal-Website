@@ -39,7 +39,7 @@ const possibleInputs = {
   },
   'education': {
     'action': function() {
-      print('<b>Computer Science Major and Space Minor, May 2021</b>');
+      print('<b>Computer Science BS and Space Minor, May 2021</b>');
       print('<i>University of Colorado at Boulder</i>');
       print('Overall Cumulative GPA: <b>3.76</b>');
       print('Computer Science GPA: <b>4.0</b>');
@@ -196,15 +196,15 @@ const possibleInputs = {
       window.open('https://distrokid.com/hyperfollow/joshuafranklin/bJUZ');
     }
   },
-  'cd': {
-    'action': function() {
-      print('The only directories that will be changed is your company\'s to add my name! ;)');
-    }
-  },
   'cat': {
     'action': function() {
       print('&#x1F431; I love cats! Here\'s mine:');
       print('<img src="https://firebasestorage.googleapis.com/v0/b/website-23ad0.appspot.com/o/cat.jpg?alt=media&token=0b55b467-170e-42de-b111-0a85f1868c7a" alt="Carlotta!" width="200px">');
+    }
+  },
+  'cd': {
+    'action': function() {
+      print('I\'m glad this shell looked convincing enough to trick you!');
     }
   },
   'ls': {
