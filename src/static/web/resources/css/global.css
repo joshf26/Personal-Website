@@ -36,11 +36,25 @@ textarea:focus {
   background-color: yellow;
   box-shadow: 2px 2px 2px yellow;
   padding: 20px;
-  margin-top: 20px;
+  margin-top: 50px;
   position: absolute;
   right: 10%;
   transform: rotateZ(20deg);
   text-align: center;
-  width: 200px;
-  font-size: 18px;
+}
+
+@media (min-width: 900px) {
+  .notice {
+    width: 400px;
+    height: 400px;
+    font-size: 45px;
+  }
+}
+
+@media (max-width: 900px) {
+  .notice {
+    width: 200px;
+    height: 200px;
+    font-size: 18px;
+  }
 }
