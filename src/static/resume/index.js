@@ -47,6 +47,14 @@ const possibleInputs = {
   },
   'experience': {
     'action': function() {
+      print('<b>Software Engineering Intern, Summer 2020</b>');
+      print('Amazon - Seattle, WA (Virtual)');
+      print('<i>&bullet; Created web-based log querying tool for my team.</i>');
+      print('<i>&bullet; Worked closely with customers in a fast feedback cycle, tailoring the tool to their exact needs.</i>');
+      print('<b>Skills Applied:</b> Kotlin, React, Spring, Groovy, Spock, Java, Git, Agile');
+
+      print('<br>');
+
       print('<b>Software Engineering Intern, Summer 2019</b>');
       print('Lucid Software - Greater Salt Lake City Area');
       print('<i>&bullet; Integrated various high level refactors like framework migration and dependency injection.</i>');
