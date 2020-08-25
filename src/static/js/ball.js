@@ -136,8 +136,21 @@ function position_helper() {
   helper.css('left', (offset.left + (small ? -72 : -95)) + 'px');
 }
 
-calculate_coordinates();
-update_ball(true);
+window.addEventListener('DOMContentLoaded', () => {
+  calculate_coordinates();
+  update_ball(true);
+
+  if (window.scrollY === 0) {
+    helper_shown = true;
+    setTimeout(() => {
+      position_helper();
+      if (helper_shown)
+        helper.animate({
+          opacity: 1
+        }, 400);
+    }, 2000);
+  }
+});
 
 ball.click(() => {
   if (current_position_index === ball_positions.length - 1) return;
@@ -160,14 +173,3 @@ window.addEventListener('resize', () => {
     animate();
   }, 300);
 });
-
-if (window.scrollY === 0) {
-  helper_shown = true;
-  setTimeout(() => {
-    position_helper();
-    if (helper_shown)
-      helper.animate({
-        opacity: 1
-      }, 400);
-  }, 2000);
-}
