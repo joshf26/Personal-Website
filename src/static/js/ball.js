@@ -74,7 +74,7 @@ function calculate_coordinates() {
   small = window.innerWidth < 900;
 }
 
-function animate() {
+function animate(dismiss_helper) {
   if (animating) {
     try_again = true;
     return;
@@ -96,7 +96,7 @@ function animate() {
     animating = false;
     if (try_again) {
       try_again = false;
-      animate();
+      animate(dismiss_helper);
     }
   });
 
@@ -104,7 +104,7 @@ function animate() {
   if (position.color !== 0)
     ball.css('animation', 'none');
 
-  if (helper_shown) {
+  if (dismiss_helper) {
     helper.animate({
       opacity: 0
     }, 300);
@@ -120,14 +120,14 @@ function animate() {
   }, ANIMATION_TIME / 2);
 }
 
-function update_ball(force) {
+function update_ball(force, dismiss_helper) {
   if (current_position_index !== 0 && window.scrollY < position_coordinates[current_position_index - 1].top)
     current_position_index--;
   else if (position_coordinates.length - 1 !== current_position_index && window.scrollY > position_coordinates[current_position_index].top) {
     current_position_index++;
   } else if (!force) return;
 
-  animate();
+  animate(dismiss_helper);
 }
 
 function position_helper() {
@@ -138,7 +138,7 @@ function position_helper() {
 
 window.addEventListener('DOMContentLoaded', () => {
   calculate_coordinates();
-  update_ball(true);
+  update_ball(true, false);
 
   if (window.scrollY === 0) {
     helper_shown = true;
@@ -146,10 +146,16 @@ window.addEventListener('DOMContentLoaded', () => {
       position_helper();
       if (helper_shown)
         helper.animate({
-          opacity: 1
+          opacity: 1,
         }, 400);
     }, 2000);
   }
+
+  // Run this every second in case something changes and we don't catch it.
+  setInterval(() => {
+    calculate_coordinates();
+    update_ball(true, false);
+  }, 2000);
 });
 
 ball.click(() => {
@@ -157,12 +163,12 @@ ball.click(() => {
 
   $.smoothScroll({
     scrollTarget: ball_positions[current_position_index + 1].scroll_target,
-    speed: 800
+    speed: 800,
   });
 });
 
 window.addEventListener('scroll', () => {
-  update_ball(false);
+  update_ball(false, true);
 });
 
 let resize_timeout;
@@ -170,6 +176,6 @@ window.addEventListener('resize', () => {
   clearTimeout(resize_timeout);
   resize_timeout = setTimeout(() => {
     calculate_coordinates();
-    animate();
+    animate(false);
   }, 300);
 });
