@@ -1,25 +1,26 @@
 {
-  "name": "personal-website",
-  "version": "1.0.0",
-  "description": "Joshua Franklin's personal website hosted at https://joshfrankl.in.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/joshf26/Personal-Website.git"
-  },
-  "author": "Joshua Franklin",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/joshf26/Personal-Website/issues"
-  },
-  "homepage": "https://github.com/joshf26/Personal-Website#readme",
-  "devDependencies": {
-    "gulp": "^4.0.0",
-    "gulp-ignore": "^2.0.2",
-    "gulp-minify": "^3.1.0",
-    "gulp-nunjucks": "^4.0.0"
-  }
+    "name": "personal-website",
+    "version": "1.0.0",
+    "description": "Joshua Franklin's personal website hosted at https://joshfrankl.in.",
+    "main": "index.js",
+    "scripts": {
+        "start": "gulp",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/joshf26/Personal-Website.git"
+    },
+    "author": "Joshua Franklin",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/joshf26/Personal-Website/issues"
+    },
+    "homepage": "https://github.com/joshf26/Personal-Website#readme",
+    "devDependencies": {
+        "gulp": "^4.0.0",
+        "gulp-ignore": "^2.0.2",
+        "gulp-minify": "^3.1.0",
+        "gulp-nunjucks": "^4.0.0"
+    }
 }

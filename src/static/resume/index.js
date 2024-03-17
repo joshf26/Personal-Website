@@ -15,7 +15,7 @@ const possibleInputs = {
   },
   'about': {
     'action': function() {
-      print('Hi. My name is Joshua Franklin. I am currently studying at the University of Colorado at Boulder, pursuing a BS in Computer Science and a minor in Space. Outside of school, I enjoy biking, hiking, and competing in hackathons.');
+      print('Hi. My name is Josh Franklin. I now work as a backend engineer at Amazon Prime Video, but you can see my projects from before that by typing "portfolio"');
       print('<img src="https://firebasestorage.googleapis.com/v0/b/website-23ad0.appspot.com/o/josh1.jpg?alt=media&token=7f7ad56e-3989-4ed5-97f0-daf0db4da18e" alt="Josh" width="400px">');
     }
   },
@@ -41,16 +41,14 @@ const possibleInputs = {
     'action': function() {
       print('<b>Computer Science BS and Space Minor, May 2021</b>');
       print('<i>University of Colorado at Boulder</i>');
-      print('Overall Cumulative GPA: <b>3.83</b>');
+      print('Overall Cumulative GPA: <b>3.845</b>');
       print('Computer Science GPA: <b>4.0</b>');
     }
   },
   'experience': {
     'action': function() {
-      print('<b>Software Engineering Intern, Summer 2020</b>');
-      print('Amazon - Seattle, WA (Virtual)');
-      print('<i>&bullet; Created web-based log querying tool for my team.</i>');
-      print('<i>&bullet; Worked closely with customers in a fast feedback cycle, tailoring the tool to their exact needs.</i>');
+      print('<b>SDE II, Summer 2020 Internship, 2021 - Present</b>');
+      print('Amazon - Seattle, WA');
       print('<b>Skills Applied:</b> Kotlin, React, Spring, Groovy, Spock, Java, Git, Agile');
 
       print('<br>');
