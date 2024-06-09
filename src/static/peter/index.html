@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+    </style>
+    <title>Peter's autoexec.cfg generator</title>
+  </head>
+  <body>
+    <label>
+      Bind key
+      <input value="l" />
+    </label>
+    <label>
+      Text
+      <textarea></textarea>
+    </label>
+    <button>Download autoexec.cfg</button>
+    <div>
+      <h3>Instructions</h3>
+      <ol>
+        <li>
+          Enter the key to bind to and the text you want to spam and download
+          the file
+        </li>
+        <li>
+          Place the file in C:\Program Files
+          (x86)\Steam\steamapps\common\Counter-Strike Global
+          Offensive\game\csgo\cfg
+          <br /><br />
+          If the file already exists here, open it in text edit and append the
+          content of the downloaded file to it
+        </li>
+        <li>Restart the game, enter a match, and spam the bound key</li>
+      </ol>
+    </div>
+  </body>
+  <script>
+    const CHUNK_SIZE = 10;
+
+    const input = document.querySelector("input");
+    const textarea = document.querySelector("textarea");
+    const button = document.querySelector("button");
+
+    button.addEventListener("click", () => {
+      const aliasPrefix = `alias${Math.random().toString().slice(2, 6)}`;
+      const bindKey = input.value;
+      let result = "";
+
+      const split = textarea.value.replace(/(\r\n|\n|\r)/gm, "").split(" ");
+      for (let i = 0; i < split.length; i += CHUNK_SIZE) {
+        const chunk = split.slice(i, i + CHUNK_SIZE);
+        result += `alias ${aliasPrefix}_${i / CHUNK_SIZE} "say ${chunk.join(
+          " "
+        )}; bind ${bindKey} ${aliasPrefix}_${
+          i + CHUNK_SIZE < split.length ? i / CHUNK_SIZE + 1 : 0
+        }"\n`;
+      }
+
+      result += `bind ${bindKey} ${aliasPrefix}_0`;
+
+      const element = document.createElement("a");
+      element.setAttribute(
+        "href",
+        "data:text/plain;charset=utf-8," + encodeURIComponent(result)
+      );
+      element.setAttribute("download", "autoexec.cfg");
+      element.style.display = "none";
+      document.body.appendChild(element);
+      element.click();
+      document.body.removeChild(element);
+
+      console.log(result);
+    });
+  </script>
+</html>
