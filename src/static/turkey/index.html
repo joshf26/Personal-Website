@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Slackey&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="turkey.gif">
+
+    <title>FRIENDSGIVING</title>
+    <style>
+        * {
+            font-size: 18px;
+
+            font-family: "Slackey", sans-serif;
+        }
+
+        body {
+            background: url('turkey.webp');
+            animation: slide 3s linear infinite;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        main {
+            background-color: white;
+            display: flex;
+            max-width: 400px;
+            margin: auto;
+            flex-direction: column;
+            gap: 15px;
+            padding: 25px;
+            border-radius: 25px;
+            box-shadow: 5px 5px 15px pink;
+            max-height: 90dvh;
+            overflow-y: auto;
+        }
+
+        @keyframes slide {
+            from {
+                background-position: 0 0;
+            }
+            to {
+                background-position: 150px 134px;
+            }
+        }
+
+        .bouncing-pumpkin {
+            position: absolute;
+            width: min(8vw, 8vw);
+            height: min(8vw, 8vw);
+        }
+
+        #rsvp-section {
+            border: 5px solid #ff8e00;
+            padding: 15px;
+        }
+
+        #rsvp-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        #rsvp-form .form-group {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Align labels to the left */
+            gap: 5px; /* Smaller gap between label and input */
+        }
+
+        #rsvp-form label {
+            font-weight: bold;
+        }
+
+        #rsvps {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #rsvps td, #rsvps th {
+            padding: 8px;
+        }
+
+        #rsvps tr:nth-child(even){background-color: #f2f2f2;}
+
+        #rsvps th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #ff8e00;
+            color: white;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        .catering img {
+            animation: pulse 0.25s linear infinite alternate, wiggle 0.5s linear infinite alternate;
+        }
+
+        @keyframes pulse {
+            from {
+                scale: 0.95;
+            }
+            to {
+                scale: 1.05;
+            }
+        }
+
+        @keyframes wiggle {
+            from {
+                rotate: -2deg;
+            }
+            to {
+                rotate: 2deg;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <img src="logo.gif" />
+        <div style="display: flex">
+            <img src="turkey.gif" width="100" />
+            <p>JOIN US ON <strong>FRIDAY, NOVEMBER 14TH</strong> AT <strong>6:30PM</strong> FOR A THANKSGIVING CELEBRATION!</p>
+            <img src="turkey.gif" width="100" />
+        </div>
+
+        <p>WE'RE GETTING THE FOLLOWING CATERING:</p>
+
+        <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 25px" class="catering">
+            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center">
+                CHIMICHURRI STEAK
+                <img src="https://urbanplates.novadine.com/menu_image/item_745,400" width="200" />
+            </div>
+            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center">
+                GRILLED CHICKEN
+                <img src="https://urbanplates.novadine.com/menu_image/item_742,400" width="200" />
+            </div>
+        </div>
+
+        <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 25px" class="catering">
+            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center">
+                MASHED POTATOES
+                <img src="https://urbanplates.novadine.com/menu_image/item_1348,400" width="200" />
+            </div>
+            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center">
+                BRUSSEL SPROUTS
+                <img src="https://urbanplates.novadine.com/menu_image/item_16054,400" width="200" />
+            </div>
+        </div>
+
+        <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 25px" class="catering">
+            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center">
+                MAC & CHEESE
+                <img src="https://api.urbanplates.com/cache-v2.php?url=https://urbanplates.novadine.com/menu_image/item_1309,400" width="200" />
+            </div>
+        </div>
+
+        <p>BUT FEEL FREE TO BRING YOUR OWN FOOD/DRINKS!</p>
+
+        <div id="rsvp-section">
+            <h2>RSVP</h2>
+            <form id="rsvp-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="status">Coming?</label>
+                    <select id="status" required>
+                        <option value="Yes">Yes</option>
+                        <option value="Maybe">Maybe</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="notes" style="text-align: left">Notes<br>(list any food/drinks you're bringing):</label>
+                    <textarea id="notes"></textarea>
+                </div>
+
+                <button type="submit">Submit</button>
+            </form>
+            <div id="rsvp-display" style="display: none;">
+                <p>You have already RSVPed!</p>
+                <ul>
+                    <li><strong>Name:</strong> <span id="display-name"></span></li>
+                    <li><strong>Coming?:</strong> <span id="display-status"></span></li>
+                    <li><strong>Notes:</strong> <span id="display-notes"></span></li>
+                </ul>
+                <button id="edit-rsvp-btn">Edit</button>
+            </div>
+        </div>
+
+        <div id="rsvps-section">
+            <h2>Guest List</h2>
+            <table id="rsvps">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Coming?</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <img src="dance.gif" />
+    </main>
+
+    <img src="pumpkin1.webp" class="bouncing-pumpkin" id="pumpkin1">
+    <img src="pumpkin2.webp" class="bouncing-pumpkin" id="pumpkin2">
+    <img src="pumpkin3.webp" class="bouncing-pumpkin" id="pumpkin3">
+    <img src="pumpkin4.webp" class="bouncing-pumpkin" id="pumpkin4">
+
+    <script>
+        const pumpkins = [
+            { element: document.getElementById('pumpkin1'), x: Math.random() * (innerWidth - 50) + 25, y: Math.random() * (innerHeight - 50) + 25, dx: 2, dy: 2 },
+            { element: document.getElementById('pumpkin2'), x: Math.random() * (innerWidth - 50) + 25, y: Math.random() * (innerHeight - 50) + 25, dx: -2, dy: 2 },
+            { element: document.getElementById('pumpkin3'), x: Math.random() * (innerWidth - 50) + 25, y: Math.random() * (innerHeight - 50) + 25, dx: 2, dy: -2 },
+            { element: document.getElementById('pumpkin4'), x: Math.random() * (innerWidth - 50) + 25, y: Math.random() * (innerHeight - 50) + 25, dx: -2, dy: -2 }
+        ];
+
+        function animate() {
+            pumpkins.forEach(p => {
+                p.x += p.dx;
+                p.y += p.dy;
+
+                if (p.x + p.element.width >= window.innerWidth || p.x <= 0) {
+                    p.dx *= -1;
+                }
+                if (p.y + p.element.height >= window.innerHeight || p.y <= 0) {
+                    p.dy *= -1;
+                }
+
+                p.element.style.left = p.x + 'px';
+                p.element.style.top = p.y + 'px';
+            });
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    </script>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
+        import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-auth.js";
+        import { getDatabase, ref, set, onValue, get } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-database.js";
+
+        const firebaseConfig = undefined;
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const database = getDatabase(app);
+
+        const rsvpForm = document.getElementById('rsvp-form');
+        const rsvpDisplay = document.getElementById('rsvp-display');
+
+        function toggleRsvpView(showForm) {
+            rsvpForm.style.display = showForm ? 'flex' : 'none';
+            rsvpDisplay.style.display = showForm ? 'none' : 'block';
+        }
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                // User is signed in anonymously.
+                console.log('User signed in:', user.uid);
+
+                // --- Set up listener for the whole guest list ---
+                const rsvpsRef = ref(database, 'rsvps');
+                onValue(rsvpsRef, (snapshot) => {
+                    const rsvps = snapshot.val();
+                    const rsvpTableBody = document.querySelector('#rsvps tbody');
+                    rsvpTableBody.innerHTML = ''; // Clear the table
+                    if (rsvps) {
+                        Object.values(rsvps).forEach(rsvp => {
+                            const row = rsvpTableBody.insertRow();
+                            row.insertCell(0).textContent = rsvp.name;
+                            row.insertCell(1).textContent = rsvp.status;
+                            row.insertCell(2).textContent = rsvp.notes;
+                        });
+                    }
+                });
+
+                // --- Check for existing RSVP to set initial view ---
+                const userRsvpRef = ref(database, 'rsvps/' + user.uid);
+                get(userRsvpRef).then((snapshot) => {
+                    if (snapshot.exists()) {
+                        const rsvpData = snapshot.val();
+                        // Pre-fill form
+                        document.getElementById('name').value = rsvpData.name;
+                        document.getElementById('status').value = rsvpData.status;
+                        document.getElementById('notes').value = rsvpData.notes;
+                        // Populate display view
+                        document.getElementById('display-name').textContent = rsvpData.name;
+                        document.getElementById('display-status').textContent = rsvpData.status;
+                        document.getElementById('display-notes').textContent = rsvpData.notes;
+                        // Show display view
+                        toggleRsvpView(false);
+                    } else {
+                        // No existing RSVP, show form
+                        toggleRsvpView(true);
+                    }
+                }).catch((error) => {
+                    console.error("Error fetching user's RSVP:", error);
+                    toggleRsvpView(true); // Show form on error
+                });
+
+            } else {
+                // User is signed out. Attempt to sign in.
+                signInAnonymously(auth).catch(error => {
+                    console.error("Anonymous auth failed:", error);
+                });
+            }
+        });
+
+        // --- Edit button logic ---
+        const editButton = document.getElementById('edit-rsvp-btn');
+        editButton.addEventListener('click', () => {
+            toggleRsvpView(true);
+        });
+
+        // --- Form submission logic ---
+        rsvpForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const status = document.getElementById('status').value;
+            const notes = document.getElementById('notes').value;
+            const user = auth.currentUser;
+
+            if (user) {
+                const rsvpRef = ref(database, 'rsvps/' + user.uid);
+                const rsvpData = { name, status, notes };
+                set(rsvpRef, rsvpData).then(() => {
+                    // Update display view with new data
+                    document.getElementById('display-name').textContent = name;
+                    document.getElementById('display-status').textContent = status;
+                    document.getElementById('display-notes').textContent = notes;
+                    // Switch to display view
+                    toggleRsvpView(false);
+                }).catch((error) => {
+                    console.error("RSVP submission failed:", error);
+                });
+            } else {
+                console.error("Cannot submit RSVP, no user is signed in.");
+            }
+        });
+
+        const audio = document.querySelector('audio');
+        window.addEventListener('click', () => {
+            audio.play();
+        });
+    </script>
+    <audio type="audio/mp3" src="./music.mp3" autoplay loop></audio>
+</body>
+</html>
