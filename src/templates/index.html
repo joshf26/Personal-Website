@@ -61,26 +61,8 @@
 
 <div class="quarter-section">
   <div class="margin-auto">
-    &copy; Joshua Franklin <script>document.write(new Date().getFullYear().toString())</script> | <a href="//github.com/joshf26" target="_blank">GitHub</a> | <span id="contact-button">Contact</span>
+    &copy; Joshua Franklin <script>document.write(new Date().getFullYear().toString())</script> | <a href="//github.com/joshf26" target="_blank">GitHub</a> | <a href="https://docs.google.com/forms/d/e/1FAIpQLSfvWeZLNXieJxGTYcEBJJpJl2E5IQqKMLp_kJX4p8ncwmhRfQ/viewform?usp=dialog" target="_blank">Contact</a>
   </div>
-</div>
-
-<div id="page-mask"></div>
-<div id="contact-popup" class="card shadow">
-  <span id="close">X</span>
-  <form action="https://script.google.com/macros/s/AKfycbwF04jTAwdL8rrMDl737CjckZNlUama8CDHFIb_myNTQt7U0A_T_zc8vscAsFDnghm64g/exec" method="post">
-    <input id="secret_number" name="secret_number" value="3" style="display: none" />
-    <h1>Contact</h1>
-    My name is<br>
-    <input name="name" type="text" required><br>
-    and my email is<br>
-    <input name="email" type="email" required>.<br>
-    Here's my message:
-    <br>
-    <textarea name="message"></textarea>
-    <br>
-    <input type="submit">
-  </form>
 </div>
 {%- endblock %}
 
@@ -88,13 +70,11 @@
   <link rel="stylesheet" href="/css/home.css">
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/ball.css">
-  <link rel="stylesheet" href="/css/contact.css">
   <link rel="stylesheet" href="/css/projects.css">
 {%- endblock %}
 
 {% block javascript -%}
   {{ jquery(true, true) }}
   <script src="/js/ball.js"></script>
-  <script src="/js/contact.js"></script>
   <script>document.getElementById('secret_number').setAttribute('value', '7')</script>
 {%- endblock %}

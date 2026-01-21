@@ -15,7 +15,7 @@ const possibleInputs = {
   },
   'about': {
     'action': function() {
-      print('Hi. My name is Josh Franklin. I now work as a backend engineer at Amazon Prime Video, but you can see my projects from before that by typing "portfolio"');
+      print('Hi. My name is Josh Franklin. I now work as a backend engineer at Amazon Prime Video, but you can see my projects from before that by typing "portfolio".');
       print('<img src="https://firebasestorage.googleapis.com/v0/b/website-23ad0.appspot.com/o/josh1.jpg?alt=media&token=7f7ad56e-3989-4ed5-97f0-daf0db4da18e" alt="Josh" width="400px">');
     }
   },
@@ -34,28 +34,32 @@ const possibleInputs = {
   'contact': {
     'action': function() {
       print('Opening in new tab. Make sure your browser allows popups.');
-      window.open('https://www.joshfrankl.in/#contact');
+      window.open('https://docs.google.com/forms/d/e/1FAIpQLSfvWeZLNXieJxGTYcEBJJpJl2E5IQqKMLp_kJX4p8ncwmhRfQ/viewform?usp=dialog');
     }
   },
   'education': {
     'action': function() {
       print('<b>Computer Science BS and Space Minor, May 2021</b>');
       print('<i>University of Colorado at Boulder</i>');
-      print('Overall Cumulative GPA: <b>3.845</b>');
+      print('Overall Cumulative GPA: <b>3.85</b>');
       print('Computer Science GPA: <b>4.0</b>');
     }
   },
   'experience': {
     'action': function() {
-      print('<b>SDE II, Summer 2020 Internship, 2021 - Present</b>');
-      print('Amazon - Seattle, WA');
-      print('<b>Skills Applied:</b> Kotlin, React, Spring, Groovy, Spock, Java, Git, Agile');
+      print('<b>SDE II, 2021 - Present (and Summer 2020 Internship)</b>');
+      print('Amazon Prime Video - Seattle, WA');
+      print('<i>&bullet; Overhauled and optimized architecture of large system to mitigate tech debt, reduce latency, and improve resilience.</i>');
+      print('<i>&bullet; Rewrote and optimized critical service resulting in massive reduction in operational load and cost.</i>');
+      print('<i>&bullet; Adopted subject-matter expert role on team, becoming the go-to person for questions, knowledge sharing, and onboarding new team members.</i>');
+      print('<i>&bullet; Leverage AI at every step including agentic coding, unit testing, issue triaging and root causing, debugging, code reviews, and automation of tedious processes.</i>');
+      print('<b>Skills Applied:</b> Agentic Coding, Kotlin, Java, Groovy, Spring, Spock, HTML, TypeScript, React, C#, .NET, Interviewing, Git, Agile');
 
       print('<br>');
 
       print('<b>Software Engineering Intern, Summer 2019</b>');
       print('Lucid Software - Greater Salt Lake City Area');
-      print('<i>&bullet; Integrated various high level refactors like framework migration and dependency injection.</i>');
+      print('<i>&bullet; Performed various high level refactors like framework migration and dependency injection.</i>');
       print('<i>&bullet; Participated in the company\'s Hackathon, where my team extended our product\'s flowcharting tools to allow flowcharts to be run like a computer program.</i>');
       print('<b>Skills Applied:</b> TypeScript, Scala, Angular, Less, Play, Git, Agile');
 
